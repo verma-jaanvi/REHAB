@@ -6,8 +6,10 @@ import { SolutionsPage } from './components/pages/SolutionsPage';
 import { NeuroRehabPage } from './components/pages/NeuroRehabPage';
 import { SpacePlannerPage } from './components/pages/SpacePlannerPage';
 import { Footer } from './components/Footer';
+import { ContactUs } from './components/pages/ContactUs';
+import { Contact } from 'lucide-react';
 
-export type Page = 'home' | 'about' | 'solutions' | 'neuro-rehab' | 'space-planner' | 'orthopedic-sports' | 'spinal' | 'pain' | 'cardiac' | 'wellness' | 'geriatric' | 'speech';
+export type Page = 'home' | 'about' | 'solutions' | 'neuro-rehab' | 'space-planner' | 'orthopedic-sports' | 'spinal' | 'pain' | 'cardiac' | 'wellness' | 'geriatric' | 'speech' | 'contact-us';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -24,6 +26,8 @@ export default function App() {
         return <NeuroRehabPage />;
       case 'space-planner':
         return <SpacePlannerPage />;
+      case 'contact-us':
+        return <ContactUs/>;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }
